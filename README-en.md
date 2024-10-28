@@ -2,12 +2,9 @@
 
 `DzwEventRouter` is a lightweight event routing utility for iOS applications. It enables flexible communication between different components through a `target-action` pattern, making it easier to handle custom events.
 
-## Features
+### Features
 
-- **Singleton Access**: Retrieve the single shared instance of `DzwEventRouter` through `shareInstance`.
-- **Target-Action Event Registration**: Register events with target-action pairs for greater flexibility and modularity.
-- **Custom Event Handling**: Trigger registered events and pass additional information using a `userInfo` dictionary.
-
+- **Target-Action Event Registration**: Register responder chain events to a specified view using a non-delegation method with target-action registration.
 ## Installation
 
 Simply copy the `DzwEventRouter` files into your project.
