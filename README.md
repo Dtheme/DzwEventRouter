@@ -11,11 +11,10 @@
 - **target-action事件注册**: 将响应链事件子层级的时间使用非反向代理的方式注册到指定父视图，target-action方式注册
 
 ### 安装
-1. 直接使用源码
-将 `DzwEventRouter` 文件夹中的文件复制到项目中即可使用。
 
-2. 或使用cocoapod安装
-支持`cocoapod`:
+支持2种方式安装使用：
+1. 将 `DzwEventRouter` 文件夹中的文件复制到项目中即可使用。
+2. 支持`cocoapod`:
   ```
   pod 'DzwEventRouter', '~> 1.0.0'
   ```
