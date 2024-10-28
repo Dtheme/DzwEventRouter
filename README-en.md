@@ -55,8 +55,10 @@ In the `ViewController`, register an event by providing the handler target and a
 ### Trigger an Event
 
 In another component, trigger the registered event.
-
+Example with a Button in a ViewController’s Subview：
 ```objc
+[button addTarget:self action:@selector(triggerEvent:) forControlEvents:UIControlEventTouchUpInside];
+
 - (void)triggerEvent {
     [[DzwEventRouter shareInstance] handleEvent:@"onCustomEvent:" userInfo:@{@"source": [self class]}];
 }
