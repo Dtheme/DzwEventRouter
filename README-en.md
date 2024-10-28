@@ -19,44 +19,6 @@ You can install `DzwEventRouter` in two ways:
    ```ruby
    pod 'DzwEventRouter', '~> 1.0.0'
    ```
-## Methods
-
-### Singleton
-
-```objc
-+ (__kindof DzwEventRouter *)shareInstance;
-```
-
-Returns the shared `DzwEventRouter` instance, which is used for all event registrations and handling.
-
-### Registering Events
-
-> **Note**: The method `registerEventWithName:target:` is deprecated. Use `addTarget:relativeAction:` for event registration.
-
-#### Deprecated Method
-
-```objc
-- (void)registerEventWithName:(NSString *)eventName target:(UIViewController *)target __attribute__((deprecated("Use ‘-addSubTarget:(id)target action:(nonnull SEL)action’ instead")));
-```
-
-Registers an event with the specified `eventName` and `target`. This method is deprecated in favor of `addTarget:relativeAction:`.
-
-#### New Method
-
-```objc
-- (void)addTarget:(id)target relativeAction:(nonnull SEL)action;
-```
-
-- **target**: The object that will handle the event.
-- **action**: The selector in the target that will be called when the event is triggered.
-
-### Handling Events
-
-```objc
-- (void)handleEvent:(NSString *)eventName userInfo:(NSDictionary *__nullable)userInfo;
-```
-
-Triggers an event with the specified `eventName`, passing optional `userInfo`. `DzwEventRouter` will invoke the registered `target-action` method associated with the event.
 
 ## Usage
 
