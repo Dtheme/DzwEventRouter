@@ -4,7 +4,7 @@
 
 ---
 
-`DzwEventRouter` 是一个轻量级的 iOS 事件路由工具。它通过 `target-action` 模式实现灵活的组件间事件通信，便于处理自定义事件。
+`DzwEventRouter` 是一个轻量级的 iOS 事件路由工具。通过 `target-action` 模式实现灵活的组件间事件通信，便于处理自定义事件。
 
 ### 功能
 
