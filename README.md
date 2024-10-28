@@ -30,7 +30,18 @@ DzwEventRouter 提供了一种更为优雅和灵活的事件路由机制，通�
   ```
 
 ### 使用示例
-
+你可以工程中提供的参考demo，demo中的UI结构如下：
+```
+ViewController
+└── view
+    ├── view1
+    │   ├── view1内按钮：`onView1Event:`事件
+    │   ├── view2
+    │   │   └── view2内按钮：`onView2Event:`事件
+    │   └── tableView：`didSelectRow:`事件
+    └── view3
+         └──touchesBegan：`onView3TouchEvent:`事件
+```
 ### 引入库：
 
 ```objc
