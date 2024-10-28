@@ -94,6 +94,3 @@ In another component, trigger the registered event.
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
----
-
-This `README` provides a comprehensive overview of `DzwEventRouter` and should make it easy for others to understand and use the library on GitHub.
