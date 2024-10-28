@@ -96,7 +96,7 @@
 
 ### 注意事项
 
-- 建议使用 `addTarget:relativeAction:` 进行事件注册，而不是废弃的 `registerEventWithName:target:`。
+- 建议使用 `addTarget:relativeAction:` 进行事件注册。
 - 确保 `target` 包含与注册的 `action` 方法对应的实现，否则事件将无法处理。
 
 ### 许可证
