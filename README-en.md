@@ -29,6 +29,11 @@ You can install `DzwEventRouter` in two ways:
 
 ## Usage
 
+import:
+```objc
+#import "EventRouterHeader.h.h"
+```
+
 ### Register an Event
 
 In the `ViewController`, register an event by providing the handler target and action.
@@ -54,8 +59,6 @@ In the `ViewController`, register an event by providing the handler target and a
 In another component, trigger the registered event.
 
 ```objc
-#import "DzwEventRouter.h"
-
 - (void)triggerEvent {
     [[DzwEventRouter shareInstance] handleEvent:@"onCustomEvent:" userInfo:@{@"source": [self class]}];
 }
