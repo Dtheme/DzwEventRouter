@@ -29,7 +29,6 @@
     [[DzwEventRouter shareInstance] addTarget:self relativeAction:@selector(onView2Event:)];
     [[DzwEventRouter shareInstance] addTarget:self relativeAction:@selector(didSelectRow:)];
     [[DzwEventRouter shareInstance] addTarget:self relativeAction:@selector(onView3TouchEvent:)];
-
 }
 
 - (void)onView2Event:(NSDictionary *)userInfo {

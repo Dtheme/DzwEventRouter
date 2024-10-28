@@ -29,7 +29,7 @@
     }
     return _eventInvocationDict;
 }
-//[_btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+
 - (void)addTarget:(id)target relativeAction:(nonnull SEL)action{
     self.delegate = target;
     SEL selector = action;
