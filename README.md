@@ -31,13 +31,17 @@ DzwEventRouter 提供了一种更为优雅和灵活的事件路由机制，通�
 
 ### 使用示例
 
+### 引入库：
+
+```objc
+#import "EventRouterHeader.h.h"
+```
+
 ### 注册事件
 
 在 `ViewController` 中，通过指定 `target` 和 `action` 来注册事件。
 
 ```
-#import "DzwEventRouter.h"
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -57,8 +61,6 @@ DzwEventRouter 提供了一种更为优雅和灵活的事件路由机制，通�
 在其他组件中，或者子视图中，触发已注册的事件。
 
 ```
-#import "DzwEventRouter.h"
-
 - (void)triggerEvent {
     [[DzwEventRouter shareInstance] handleEvent:@"onCustomEvent:" userInfo:@{@"source": [self class]}];
 }
