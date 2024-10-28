@@ -59,8 +59,11 @@ DzwEventRouter 提供了一种更为优雅和灵活的事件路由机制，通�
 ### 触发事件
 
 在其他组件中，或者子视图中，触发已注册的事件。
+以子view中的按钮为例：
 
 ```
+[button addTarget:self action:@selector(triggerEvent:) forControlEvents:UIControlEventTouchUpInside];
+
 - (void)triggerEvent {
     [[DzwEventRouter shareInstance] handleEvent:@"onCustomEvent:" userInfo:@{@"source": [self class]}];
 }
