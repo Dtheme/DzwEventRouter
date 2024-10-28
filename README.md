@@ -34,7 +34,7 @@ DzwEventRouter 提供了一种更为优雅和灵活的事件路由机制，通�
 ### 引入库：
 
 ```objc
-#import "EventRouterHeader.h.h"
+#import "EventRouterHeader.h"
 ```
 
 ### 注册事件
