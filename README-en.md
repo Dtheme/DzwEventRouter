@@ -9,7 +9,13 @@
 ### Features
 
 - **Target-action Event Registration**: Register responder chain events from child levels to a specified parent view using a non-delegation method with target-action registration.
-  
+
+`DzwEventRouter` provides a more elegant and flexible event routing mechanism, centralizing event registration and handling to reduce the code complexity caused by deep view hierarchies.
+
+- **Eliminates Multi-level Delegate Passing**: With `DzwEventRouter`, child views no longer need to pass events up through multiple layers of delegates to reach the parent view or controller. Instead, events are sent directly through the event router, significantly reducing coupling between view layers.
+- **Enhances Code Maintainability**: Centralizing event management in `DzwEventRouter` makes code structure clearer, with event registration and handling logic managed in one place, avoiding the maintenance challenges of complex delegate patterns.
+- **More Flexible Event Handling**: `DzwEventRouter` allows custom parameters to be passed via `userInfo` and extends event data with the decorator pattern, making event transmission between different views more flexible and lightweight.
+- 
 ### Installation
 
 You can install `DzwEventRouter` in two ways:
