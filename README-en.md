@@ -31,7 +31,7 @@ You can install `DzwEventRouter` in two ways:
 
 import:
 ```objc
-#import "EventRouterHeader.h.h"
+#import "EventRouterHeader.h"
 ```
 
 ### Register an Event
@@ -39,8 +39,6 @@ import:
 In the `ViewController`, register an event by providing the handler target and action.
 
 ```objc
-#import "DzwEventRouter.h"
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
