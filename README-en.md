@@ -6,10 +6,15 @@
 
 - **Target-action Event Registration**: Register responder chain events from child levels to a specified parent view using a non-delegation method with target-action registration.
   
-## Installation
+### Installation
 
-Simply copy the `DzwEventRouter` files into your project.
+You can install `DzwEventRouter` in two ways:
 
+1. **Manual Installation**: Copy the files in the `DzwEventRouter` folder directly into your project.
+2. **Using CocoaPods**: Add the following line to your `Podfile`:
+   ```ruby
+   pod 'DzwEventRouter', '~> 1.0.0'
+   ```
 ## Methods
 
 ### Singleton
