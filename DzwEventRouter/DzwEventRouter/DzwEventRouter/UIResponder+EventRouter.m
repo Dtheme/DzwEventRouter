@@ -13,16 +13,16 @@
 @implementation UIResponder (EventRouter)
 - (instancetype)init {
     if (self = [super init]) {
-        [[DzwEventRouter shareInstance].eventInvocationDict addEntriesFromDictionary:[self d_RouteEventMap]];
+        [[DzwEventRouter shareInstance].eventInvocationDict addEntriesFromDictionary:[self routeEventMap]];
     }
     return self;
 }
 
-- (void)d_RouterEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {
-    [self.nextResponder d_RouterEventWithName:eventName userInfo:userInfo];
+- (void)routerEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {
+    [self.nextResponder routerEventWithName:eventName userInfo:userInfo];
 }
 
-- (NSDictionary *)d_RouteEventMap{
+- (NSDictionary *)routeEventMap{
     return nil;
 }
 @end

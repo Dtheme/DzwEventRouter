@@ -21,7 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (__kindof DzwEventRouter *)shareInstance;
 
 // 注册事件
-- (void)registerEventWithName:(NSString *)eventName target:(UIViewController *)target;
+- (void)registerEventWithName:(NSString *)eventName target:(UIViewController *)target __attribute__((deprecated("Use ‘-addSubTarget:(id)target action:(nonnull SEL)action’ instead")));
+- (void)addTarget:(id)target relativeAction:(nonnull SEL)action;
 
 // 处理事件
 - (void)handleEvent:(NSString *)eventName userInfo:(NSDictionary *__nullable)userInfo;

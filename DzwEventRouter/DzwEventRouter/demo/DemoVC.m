@@ -24,11 +24,12 @@
     [self.view addSubview:self.v1];
     [self.view addSubview:self.v3];
 
-    // 注册事件，方法名为 onCustomEvent:
-    [[DzwEventRouter shareInstance] registerEventWithName:@"onView1Event:" target:self];
-    [[DzwEventRouter shareInstance] registerEventWithName:@"onView2Event:" target:self];
-    [[DzwEventRouter shareInstance] registerEventWithName:@"didSelectRow:" target:self];
-    [[DzwEventRouter shareInstance] registerEventWithName:@"onView3TouchEvent:" target:self];
+    // 注册事件:
+    [[DzwEventRouter shareInstance] addTarget:self relativeAction:@selector(onView1Event:)];
+    [[DzwEventRouter shareInstance] addTarget:self relativeAction:@selector(onView2Event:)];
+    [[DzwEventRouter shareInstance] addTarget:self relativeAction:@selector(didSelectRow:)];
+    [[DzwEventRouter shareInstance] addTarget:self relativeAction:@selector(onView3TouchEvent:)];
+
 }
 
 - (void)onView2Event:(NSDictionary *)userInfo {

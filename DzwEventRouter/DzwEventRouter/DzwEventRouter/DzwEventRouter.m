@@ -29,6 +29,17 @@
     }
     return _eventInvocationDict;
 }
+//[_btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+- (void)addTarget:(id)target relativeAction:(nonnull SEL)action{
+    self.delegate = target;
+    SEL selector = action;
+
+    // 创建并存储 Invocation
+    NSInvocation *invocation = [self createInvocationWithSelector:selector];
+    if (invocation) {
+        self.eventInvocationDict[NSStringFromSelector(action)] = invocation;
+    }
+}
 
 - (void)registerEventWithName:(NSString *)eventName target:(UIViewController *)target {
     self.delegate = target;
