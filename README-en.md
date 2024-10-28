@@ -1,5 +1,9 @@
 # DzwEventRouter
 
+[中文](https://github.com/Dtheme/DzwEventRouter/blob/main/README.md) | [English](https://github.com/Dtheme/DzwEventRouter/blob/main/README-en.md)
+
+---
+
 `DzwEventRouter` is a lightweight event routing utility for iOS applications. It enables flexible communication between different components through a `target-action` pattern, making it easier to handle custom events.
 
 ### Features
