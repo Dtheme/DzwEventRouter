@@ -42,6 +42,8 @@ ViewController
     └── view3
          └──touchesBegan：`onView3TouchEvent:`事件
 ```
+事件都将在vc中处理
+
 ### 引入库：
 
 ```objc
