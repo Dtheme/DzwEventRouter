@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DzwEventRouter"
-  s.version      = "0.0.9"
+  s.version      = "1.0.0"
   s.summary      = "A lightweight event router for iOS applications."
   s.description  = <<-DESC
     DzwEventRouter enables flexible communication between different components in an iOS app through a target-action pattern.
