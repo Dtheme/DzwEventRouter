@@ -18,49 +18,6 @@
   ```
   pod 'DzwEventRouter', '~> 1.0.0'
   ```
-### 方法
-
-### 单例方法
-
-```
-+ (__kindof DzwEventRouter *)shareInstance;
-
-```
-
-返回 `DzwEventRouter` 的共享实例，用于所有事件的注册与处理。
-
-### 注册事件
-
-> 注意：registerEventWithName:target: 方法已被废弃，建议使用 addTarget:relativeAction: 注册事件。
-> 
-
-### 废弃方法
-
-```
-- (void)registerEventWithName:(NSString *)eventName target:(UIViewController *)target __attribute__((deprecated("Use ‘-addSubTarget:(id)target action:(nonnull SEL)action’ instead")));
-
-```
-
-使用指定的 `eventName` 和 `target` 注册事件。该方法已废弃，建议改用 `addTarget:relativeAction:`。
-
-### 新增方法
-
-```
-- (void)addTarget:(id)target relativeAction:(nonnull SEL)action;
-
-```
-
-- **target**：处理事件的对象。
-- **action**：事件触发时调用的选择器（`SEL`）。
-
-### 触发事件
-
-```
-- (void)handleEvent:(NSString *)eventName userInfo:(NSDictionary *__nullable)userInfo;
-
-```
-
-通过指定的 `eventName` 触发事件，并传递可选的 `userInfo` 字典。`DzwEventRouter` 将调用与事件关联的 `target-action` 方法来处理事件。
 
 ### 使用示例
 
