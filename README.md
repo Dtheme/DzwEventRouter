@@ -1,6 +1,6 @@
 # DzwEventRouter
 
-[English](https://github.com/Dtheme/DzwEventRouter/edit/main/README.md) | [中文](https://github.com/Dtheme/DzwEventRouter/edit/main/README.md)
+[中文](https://github.com/Dtheme/DzwEventRouter/blob/main/README.md) | [English](https://github.com/Dtheme/DzwEventRouter/edit/main/README.md)
 
 ---
 
