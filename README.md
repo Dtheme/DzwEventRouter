@@ -12,8 +12,11 @@
 
 ### 安装
 
-将 `DzwEventRouter` 文件夹中的文件复制到项目中即可使用。
-
+- 将 `DzwEventRouter` 文件夹中的文件复制到项目中即可使用。
+- 支持`cocoapod`:
+  ```
+  pod 'DzwEventRouter', '~> 1.0.0'
+  ```
 ### 方法
 
 ### 单例方法
