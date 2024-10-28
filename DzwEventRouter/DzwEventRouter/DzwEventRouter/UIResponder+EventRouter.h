@@ -11,15 +11,15 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIResponder (EventRouter)
-- (void)ZG_RouterEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo;
+- (void)d_RouterEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo;
 
 /// 响应链事件映射
-/// - (NSDictionary *)zg_RouteEventMap {
+/// - (NSDictionary *)d_RouteEventMap {
 ///     return @{@"test1":[self createInvocationWithSelector:@selector(test:)],
 ///              @"container":[self createInvocationWithSelector:@selector(container:)]
 ///              };
 /// }
-- (NSDictionary *)ZG_RouteEventMap;
+- (NSDictionary *)d_RouteEventMap;
 @end
 
 NS_ASSUME_NONNULL_END
