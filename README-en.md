@@ -33,14 +33,14 @@ You can refer to the demo; the UI structure in the demo is as follows:
 ViewController
 └── view
     ├── view1
-    │   ├── view1内按钮
+    │   ├── view1内按钮：event `onView1Event:`
     │   ├── view2
-    │   │   └── view2内按钮
-    │   └── tableView
+    │   │   └── view2内按钮：event `onView2Event:`
+    │   └── tableView：event `didSelectRow:`
     └── view3
-         └──touchesBegan
+         └──touchesBegan：event `onView3TouchEvent:`
 ```
-
+Events will be handled centrally in the ViewController.
 
 import:
 ```objc
