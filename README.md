@@ -4,100 +4,101 @@
 
 ---
 
-## English
+`DzwEventRouter` 是一个轻量级的 iOS 事件路由工具。它通过 `target-action` 模式实现灵活的组件间事件通信，便于处理自定义事件。
 
-### DzwEventRouter
+### 功能
 
-`DzwEventRouter` is a lightweight event routing utility for iOS applications. It enables flexible communication between different components through a `target-action` pattern, making it easier to handle custom events.
+- 将响应链事件使用非反向代理的方式注册到指定视图，target-action方式注册
 
-### Features
+### 安装
 
-- **Singleton Access**: Retrieve the single shared instance of `DzwEventRouter` through `shareInstance`.
-- **Target-Action Event Registration**: Register events with target-action pairs for greater flexibility and modularity.
-- **Custom Event Handling**: Trigger registered events and pass additional information using a `userInfo` dictionary.
+将 `DzwEventRouter` 文件夹中的文件复制到项目中即可使用。
 
-### Installation
+### 方法
 
-Simply copy the `DzwEventRouter` files into your project.
+### 单例方法
 
-### Methods
-
-#### Singleton
-
-```objc
+```
 + (__kindof DzwEventRouter *)shareInstance;
+
 ```
 
-Returns the shared `DzwEventRouter` instance, which is used for all event registrations and handling.
+返回 `DzwEventRouter` 的共享实例，用于所有事件的注册与处理。
 
-#### Registering Events
+### 注册事件
 
-> **Note**: The method `registerEventWithName:target:` is deprecated. Use `addTarget:relativeAction:` for event registration.
+> 注意：registerEventWithName:target: 方法已被废弃，建议使用 addTarget:relativeAction: 注册事件。
+> 
 
-##### Deprecated Method
+### 废弃方法
 
-```objc
+```
 - (void)registerEventWithName:(NSString *)eventName target:(UIViewController *)target __attribute__((deprecated("Use ‘-addSubTarget:(id)target action:(nonnull SEL)action’ instead")));
+
 ```
 
-Registers an event with the specified `eventName` and `target`. This method is deprecated in favor of `addTarget:relativeAction:`.
+使用指定的 `eventName` 和 `target` 注册事件。该方法已废弃，建议改用 `addTarget:relativeAction:`。
 
-##### New Method
+### 新增方法
 
-```objc
+```
 - (void)addTarget:(id)target relativeAction:(nonnull SEL)action;
+
 ```
 
-- **target**: The object that will handle the event.
-- **action**: The selector in the target that will be called when the event is triggered.
+- **target**：处理事件的对象。
+- **action**：事件触发时调用的选择器（`SEL`）。
 
-#### Handling Events
+### 触发事件
 
-```objc
+```
 - (void)handleEvent:(NSString *)eventName userInfo:(NSDictionary *__nullable)userInfo;
+
 ```
 
-Triggers an event with the specified `eventName`, passing optional `userInfo`. `DzwEventRouter` will invoke the registered `target-action` method associated with the event.
+通过指定的 `eventName` 触发事件，并传递可选的 `userInfo` 字典。`DzwEventRouter` 将调用与事件关联的 `target-action` 方法来处理事件。
 
-### Usage
+### 使用示例
 
-#### Register an Event
+### 注册事件
 
-In the `ViewController`, register an event by providing the handler target and action.
+在 `ViewController` 中，通过指定 `target` 和 `action` 来注册事件。
 
-```objc
+```
 #import "DzwEventRouter.h"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Register the event with a target and action
+
+    // 注册事件，指定 target 和 action
     [[DzwEventRouter shareInstance] addTarget:self relativeAction:@selector(onCustomEvent:)];
 }
 
-// Event handling method
+// 事件处理方法
 - (void)onCustomEvent:(NSDictionary *)userInfo {
-    NSLog(@"Received event with userInfo: %@", userInfo);
+    NSLog(@"收到事件，userInfo: %@", userInfo);
 }
+
 ```
 
-#### Trigger an Event
+### 触发事件
 
-In another component, trigger the registered event.
+在其他组件中，触发已注册的事件。
 
-```objc
+```
 #import "DzwEventRouter.h"
 
 - (void)triggerEvent {
     [[DzwEventRouter shareInstance] handleEvent:@"onCustomEvent:" userInfo:@{@"source": [self class]}];
 }
+
 ```
 
-### Notes
+### 注意事项
 
-- Use `addTarget:relativeAction:` for event registration instead of the deprecated `registerEventWithName:target:`.
-- Ensure the `target` contains the method corresponding to the registered action; otherwise, the event will not be handled.
+- 建议使用 `addTarget:relativeAction:` 进行事件注册，而不是废弃的 `registerEventWithName:target:`。
+- 确保 `target` 包含与注册的 `action` 方法对应的实现，否则事件将无法处理。
 
-### License
+### 许可证
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+本项目使用 MIT 许可证，详见 [LICENSE](https://www.notion.so/dzwillusionfield/LICENSE) 文件。
