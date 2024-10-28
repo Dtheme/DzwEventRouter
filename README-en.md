@@ -4,7 +4,8 @@
 
 ### Features
 
-- **Target-Action Event Registration**: Register responder chain events to a specified view using a non-delegation method with target-action registration.
+- **Target-action Event Registration**: Register responder chain events from child levels to a specified parent view using a non-delegation method with target-action registration.
+  
 ## Installation
 
 Simply copy the `DzwEventRouter` files into your project.
