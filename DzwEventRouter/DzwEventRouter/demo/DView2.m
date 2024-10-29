@@ -41,6 +41,6 @@
 }
 
 - (void)btnAction:(UIButton *)sender{
-    [[DzwEventRouter shareInstance] registerEvent:@"onView2Event:" userInfo:@{@"source": [self class]}];
+    RegisterEvent(@"onView2Event:", @{@"source": [self class]});
 }
 @end

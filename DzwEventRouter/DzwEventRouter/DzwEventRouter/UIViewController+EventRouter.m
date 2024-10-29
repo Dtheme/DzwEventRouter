@@ -15,8 +15,7 @@
     NSMutableDictionary *decoratorDic = [NSMutableDictionary dictionaryWithDictionary:userInfo];
 
     // 传递事件给 DzwEventRouter
-    [[DzwEventRouter shareInstance] registerEvent:eventName userInfo:decoratorDic];
-
+    RegisterEvent(eventName, decoratorDic);
 }
 
 @end

@@ -63,9 +63,9 @@
     NSString *selectedItem = self.dataArray[indexPath.row];
 
     // 触发事件，将选中的项作为 userInfo 传递
-    [[DzwEventRouter shareInstance] registerEvent:@"didSelectRow:" userInfo:@{@"selectedItem": selectedItem,
-                                                                            @"tableView":tableView,
-                                                                            @"indexPath":indexPath}];
+    RegisterEvent(@"didSelectRow:", @{@"selectedItem": selectedItem,
+                                      @"tableView":tableView,
+                                      @"indexPath":indexPath});
 }
 
 #pragma mark - getter /setter
@@ -90,7 +90,7 @@
 }
 
 - (void)btnAction:(UIButton *)sender{
-    [[DzwEventRouter shareInstance] registerEvent:@"onView1Event:" userInfo:@{@"source": [self class]}];
+    RegisterEvent(@"onView1Event:", @{@"source": [self class]});
 }
 
 - (UITableView *)tableView{

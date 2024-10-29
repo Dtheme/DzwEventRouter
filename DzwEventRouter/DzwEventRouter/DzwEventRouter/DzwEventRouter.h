@@ -32,4 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
+NS_INLINE void RegisterEvent(NSString *_Nonnull eventName, NSDictionary * _Nullable userInfo ) {
+    [[DzwEventRouter shareInstance] registerEvent:eventName userInfo:userInfo];
+}
 

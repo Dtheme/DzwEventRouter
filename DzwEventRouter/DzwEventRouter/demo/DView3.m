@@ -27,7 +27,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [[DzwEventRouter shareInstance] registerEvent:@"onView2Event:" userInfo:@{@"source": [self class]}];
+    RegisterEvent(@"onView2Event:", @{@"source": [self class]});
 }
 
 @end

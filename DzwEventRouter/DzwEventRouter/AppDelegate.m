@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-//#import "DemoVC.h"
+#import "DemoVC.h"
 
 @interface AppDelegate ()
 
@@ -16,11 +16,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    DemoVC *vc = [[DemoVC alloc] init];
-//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
-//    self.window.rootViewController = navigationController;
-//    [self.window makeKeyAndVisible];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    DemoVC *vc = [[DemoVC alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
