@@ -30,6 +30,19 @@ DzwEventRouter 提供了一种更为优雅和灵活的事件路由机制，通�
   ```
 
 ### 使用示例
+你可以工程中提供的参考demo，demo中的UI结构如下：
+```
+ViewController
+└── view
+    ├── view1
+    │   ├── view1内按钮：`onView1Event:`事件
+    │   ├── view2
+    │   │   └── view2内按钮：`onView2Event:`事件
+    │   └── tableView：`didSelectRow:`事件
+    └── view3
+         └──touchesBegan：`onView3TouchEvent:`事件
+```
+事件都将在vc中处理
 
 ### 引入库：
 
@@ -59,8 +72,11 @@ DzwEventRouter 提供了一种更为优雅和灵活的事件路由机制，通�
 ### 触发事件
 
 在其他组件中，或者子视图中，触发已注册的事件。
+以子view中的按钮为例：
 
 ```
+[button addTarget:self action:@selector(triggerEvent:) forControlEvents:UIControlEventTouchUpInside];
+
 - (void)triggerEvent {
     [[DzwEventRouter shareInstance] handleEvent:@"onCustomEvent:" userInfo:@{@"source": [self class]}];
 }

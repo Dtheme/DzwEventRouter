@@ -28,6 +28,19 @@ You can install `DzwEventRouter` in two ways:
    ```
 
 ## Usage
+You can refer to the demo; the UI structure in the demo is as follows:
+```
+ViewController
+└── view
+    ├── view1
+    │   ├── view1内按钮：event `onView1Event:`
+    │   ├── view2
+    │   │   └── view2内按钮：event `onView2Event:`
+    │   └── tableView：event `didSelectRow:`
+    └── view3
+         └──touchesBegan：event `onView3TouchEvent:`
+```
+Events will be handled centrally in the ViewController.
 
 import:
 ```objc
@@ -55,8 +68,10 @@ In the `ViewController`, register an event by providing the handler target and a
 ### Trigger an Event
 
 In another component, trigger the registered event.
-
+Example with a Button in a ViewController’s Subview：
 ```objc
+[button addTarget:self action:@selector(triggerEvent:) forControlEvents:UIControlEventTouchUpInside];
+
 - (void)triggerEvent {
     [[DzwEventRouter shareInstance] handleEvent:@"onCustomEvent:" userInfo:@{@"source": [self class]}];
 }
