@@ -1,6 +1,6 @@
 //
 //  DzwEventRouter.m
-//  MGJRouterDemo
+//  DzwEventRouter
 //
 //  Created by dzw on 2024/10/23.
 //  Copyright © 2024 juangua. All rights reserved.
@@ -34,18 +34,16 @@
     self.delegate = target;
     SEL selector = action;
 
-    // 创建并存储 Invocation
     NSInvocation *invocation = [self createInvocationWithSelector:selector];
     if (invocation) {
         self.eventInvocationDict[NSStringFromSelector(action)] = invocation;
     }
 }
 
-- (void)registerEventWithName:(NSString *)eventName target:(UIViewController *)target {
+- (void)addEventWithName:(NSString *)eventName target:(UIViewController *)target {
     self.delegate = target;
     SEL selector = NSSelectorFromString(eventName);
 
-    // 创建并存储 Invocation
     NSInvocation *invocation = [self createInvocationWithSelector:selector];
     if (invocation) {
         self.eventInvocationDict[eventName] = invocation;
@@ -54,7 +52,7 @@
 
 - (NSInvocation *)createInvocationWithSelector:(SEL)selector {
     if (![self.delegate respondsToSelector:selector]) {
-        NSLog(@"Warning: Target does not respond to selector %@", NSStringFromSelector(selector));
+        NSLog(@"[DzwEventRouter] Warning: Target does not respond to selector %@", NSStringFromSelector(selector));
         return nil;
     }
 
@@ -64,13 +62,13 @@
     return invocation;
 }
 
-- (void)handleEvent:(NSString *)eventName userInfo:(NSDictionary *)userInfo {
+- (void)registerEvent:(NSString *)eventName userInfo:(NSDictionary *)userInfo {
     NSInvocation *invocation = self.eventInvocationDict[eventName];
     if (invocation) {
         [invocation setArgument:&userInfo atIndex:2];  // 参数从2开始，0和1是self和_cmd
         [invocation invoke];
     } else {
-        NSLog(@"No event registered for eventName: %@", eventName);
+        NSLog(@"[DzwEventRouter] No event associated for eventName: %@", eventName);
     }
 }
 

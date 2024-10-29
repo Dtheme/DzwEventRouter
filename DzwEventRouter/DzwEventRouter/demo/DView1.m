@@ -1,6 +1,6 @@
 //
 //  DView1.m
-//  MGJRouterDemo
+//  DzwEventRouter
 //
 //  Created by dzw on 2024/10/23.
 //  Copyright © 2024 juangua. All rights reserved.
@@ -63,7 +63,7 @@
     NSString *selectedItem = self.dataArray[indexPath.row];
 
     // 触发事件，将选中的项作为 userInfo 传递
-    [[DzwEventRouter shareInstance] handleEvent:@"didSelectRow:" userInfo:@{@"selectedItem": selectedItem,
+    [[DzwEventRouter shareInstance] registerEvent:@"didSelectRow:" userInfo:@{@"selectedItem": selectedItem,
                                                                             @"tableView":tableView,
                                                                             @"indexPath":indexPath}];
 }
@@ -90,7 +90,7 @@
 }
 
 - (void)btnAction:(UIButton *)sender{
-    [[DzwEventRouter shareInstance] handleEvent:@"onView1Event:" userInfo:@{@"source": [self class]}];
+    [[DzwEventRouter shareInstance] registerEvent:@"onView1Event:" userInfo:@{@"source": [self class]}];
 }
 
 - (UITableView *)tableView{

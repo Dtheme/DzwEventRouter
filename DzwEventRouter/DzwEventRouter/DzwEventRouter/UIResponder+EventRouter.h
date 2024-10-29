@@ -1,6 +1,6 @@
 //
 //  UIResponder+EventRouter.h
-//  MGJRouterDemo
+//  DzwEventRouter
 //
 //  Created by dzw on 2024/10/23.
 //  Copyright © 2024 juangua. All rights reserved.

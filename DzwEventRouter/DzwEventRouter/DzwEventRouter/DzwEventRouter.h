@@ -1,6 +1,6 @@
 //
 //  DzwEventRouter.h
-//  MGJRouterDemo
+//  DzwEventRouter
 //
 //  Created by dzw on 2024/10/23.
 //  Copyright © 2024 juangua. All rights reserved.
@@ -21,11 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (__kindof DzwEventRouter *)shareInstance;
 
 // 注册事件
-- (void)registerEventWithName:(NSString *)eventName target:(UIViewController *)target __attribute__((deprecated("Use ‘-addSubTarget:(id)target action:(nonnull SEL)action’ instead")));
+- (void)registerEvent:(NSString *)eventName userInfo:(NSDictionary *__nullable)userInfo;
+
+// 关联事件
+- (void)addEventWithName:(NSString *)eventName target:(UIViewController *)target __attribute__((deprecated("Use ‘-addSubTarget:(id)target action:(nonnull SEL)action’ instead")));
 - (void)addTarget:(id)target relativeAction:(nonnull SEL)action;
 
-// 处理事件
-- (void)handleEvent:(NSString *)eventName userInfo:(NSDictionary *__nullable)userInfo;
 
 @end
 
