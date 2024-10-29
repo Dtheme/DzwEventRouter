@@ -40,16 +40,6 @@
     }
 }
 
-- (void)addEventWithName:(NSString *)eventName target:(UIViewController *)target {
-    self.delegate = target;
-    SEL selector = NSSelectorFromString(eventName);
-
-    NSInvocation *invocation = [self createInvocationWithSelector:selector];
-    if (invocation) {
-        self.eventInvocationDict[eventName] = invocation;
-    }
-}
-
 - (NSInvocation *)createInvocationWithSelector:(SEL)selector {
     if (![self.delegate respondsToSelector:selector]) {
         NSLog(@"[DzwEventRouter] Warning: Target does not respond to selector %@", NSStringFromSelector(selector));

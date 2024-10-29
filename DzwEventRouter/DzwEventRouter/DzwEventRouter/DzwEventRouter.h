@@ -24,7 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)registerEvent:(NSString *)eventName userInfo:(NSDictionary *__nullable)userInfo;
 
 // 关联事件
-- (void)addEventWithName:(NSString *)eventName target:(UIViewController *)target __attribute__((deprecated("Use ‘-addSubTarget:(id)target action:(nonnull SEL)action’ instead")));
 - (void)addTarget:(id)target relativeAction:(nonnull SEL)action;
 
 
